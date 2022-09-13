@@ -10,7 +10,7 @@ export default function AddProduct() {
     const [file, setFile] = useState();
 
     async function addProduct() {
-        let item = { name, desc, price, file };
+        //let item = { name, desc, price, file };
 
         const formData = new FormData();
         formData.append("file", file);

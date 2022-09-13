@@ -20,8 +20,16 @@ function Login() {
             body:JSON.stringify(item)
         });
         result = await result.json();
-        localStorage.setItem("user-info",JSON.stringify(result));
-        navigate("/add");
+        console.log("status",result.status);
+        let resStatus="-1";
+        if(result.errorMessage==="Data Not Found"){
+            alert("Please Register Yourself!")
+            navigate("/register");
+        } else {
+            localStorage.setItem("user-info",JSON.stringify(result));
+            navigate("/add");
+        }
+     
     }
 
     useEffect(() => {
@@ -35,7 +43,7 @@ function Login() {
 
             <div className="col-sm-4 offset-4">
                 <br/>
-                <input type="text" placeholder="Enter userId" onChange={(e) => setUserId(e.target.value)} className="form-control" /><br /><br />
+                <input type="text" placeholder="Enter Numeric UserId" onChange={(e) => setUserId(e.target.value)} className="form-control" /><br /><br />
                 <input type="text" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} className="form-control" /><br /><br />
                 <button className="btn btn-primary" onClick={login}>Login</button>
             </div>

@@ -28,7 +28,7 @@ export default function Register() {
         });
 
         result = await result.json();
-        console.warn("result", result);
+        alert(`Your User Id : ${result.userId}`);
         localStorage.setItem("user-info", JSON.stringify(result));
         navigate("/add");
 
