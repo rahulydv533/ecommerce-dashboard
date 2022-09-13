@@ -42,4 +42,13 @@
   padding:10px
 }
 
+.update{
+  background-color: green;
+  color:#fff;
+  padding:7px;
+  border-radius: 5px;
+  /* default is pointer */
+  cursor: pointer;  
+}
+
 

@@ -23,7 +23,8 @@ export default function Header() {
                             <>
                                 <Link to="/">ProductList</Link>
                                 <Link to="/add">AddProduct</Link>
-                                <Link to="/update">UpdateProduct</Link>
+                                {/* <Link to="/update">UpdateProduct</Link> */}
+                                <Link to="/search">Search</Link>
 
                             </>
                             :

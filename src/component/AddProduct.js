@@ -9,7 +9,7 @@ export default function AddProduct() {
     const [price, setPrice] = useState();
     const [file, setFile] = useState();
 
-    function addProduct() {
+    async function addProduct() {
         let item = { name, desc, price, file };
 
         const formData = new FormData();
@@ -22,13 +22,14 @@ export default function AddProduct() {
         //     console.log("let see result", result.data);
         // });
 
-        fetch("http://localhost:9091/insertProduct", {
+        let result = await fetch("http://localhost:9091/insertProduct", {
             method: 'POST',
             body: formData
-        }).then(response => response.json()).then((result) => {
-            console.log("See response", result)
-           
-        });
+        })
+
+        result = await result.json();
+        console.log("response", result)   
+
 
         // document.getElementById("inputBox").onreset();
         // setName("");
